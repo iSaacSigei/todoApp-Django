@@ -1,10 +1,26 @@
-<h3>Update Task</h3>
+<style>
+  .update-field {
+    height: 100vh;
+	width: 100vw;
+    background-color: #638cb8;
+    padding: 0px;
+  }
+  .update-form {
+    margin: auto;
+    width: 80%;
+  }
+  h3 {
+	padding-top: 20px;
+    color: white;
+  }
+</style>
+<div class="update-field">
+  <div class="update-form">
+    <h3>Update Task</h3>
 
-<form method="POST" action="">
-	{% csrf_token %}
-
-	{{form}}
-	<input type="submit" name="Update Task">
-
-
-</form>
+    <form method="POST" action="">
+      {% csrf_token %} {{form}}
+      <input type="submit" name="Update Task" />
+    </form>
+  </div>
+</div>

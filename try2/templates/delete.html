@@ -1,8 +1,49 @@
-<p>Are you sure you want to delete "{{item}}"?</p>
+<style>
+  .delete {
+    text-align: center;
+    color: white;
+    font-size: large;
+  }
+  .body {
+    height: 100vh;
+    background-color: #638cb8;
+    padding: 0px;
+	width: 100vw;
 
-<a href="{% url 'list' %}" >Cancel</a>
-
-<form method="POST" action="">
-	{% csrf_token %}
-	<input type="submit" name="Confirm">
-</form>
+  }
+  .container {
+    width: 50%;
+    margin: auto;
+  }
+  .inp {
+    padding: 5px;
+    background-color: red;
+	color: white;
+  }
+  .box {
+	color: white;
+    background-color: #6ba3e8;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .form-field {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>
+<div class="body">
+  <div class="container">
+    <p class="delete">Are you sure you want to delete "{{item}}"?</p>
+    <div class="form-field">
+      <div>
+        <a class="box" href="{% url 'list' %}">Cancel</a>
+      </div>
+      <div>
+        <form method="POST" action="">
+          {% csrf_token %}
+          <input class="inp" type="submit" value="Yes" name="Confirm" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
